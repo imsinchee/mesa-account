@@ -265,9 +265,8 @@ function run() {
         DEBIT.innerHTML = "";
         CREDIT.innerHTML = endingBalance;
       }
-      temMonth = temMonth%13
       var beginingBalanceWrite = db.ref(
-        "ACCOUNT/BEGINING-BALANCE/" + months[temMonth]
+        "ACCOUNT/BEGINING-BALANCE/" + months[temMonth%12]
       );
       beginingBalanceWrite.set(endingBalance);
     });
