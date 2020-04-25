@@ -265,6 +265,7 @@ function run() {
         DEBIT.innerHTML = "";
         CREDIT.innerHTML = endingBalance;
       }
+      temMonth = temMonth%13
       var beginingBalanceWrite = db.ref(
         "ACCOUNT/BEGINING-BALANCE/" + months[temMonth]
       );
