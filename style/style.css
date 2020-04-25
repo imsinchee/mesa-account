@@ -1,0 +1,94 @@
+#login {
+  display: block;
+}
+
+#account {
+  display: none;
+}
+
+#addAccount {
+  display: block;
+}
+
+br {
+  margin: 10px;
+  padding: 10px;
+}
+
+.button {
+  background-color: rgb(56, 228, 56);
+  color: white;
+  border: none;
+  width: 100px;
+  height: 40px;
+  border-radius: 10px;
+  font-family: Helvetica;
+  font-size: 20px;
+}
+
+.button:hover {
+  background-color: darkgreen;
+  cursor: pointer;
+}
+
+.input {
+  width: 180px;
+  height: 30px;
+  border-radius: 10px;
+  text-align: center;
+}
+
+#account-table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+#account-table td,
+#account-table th {
+  border: 1px solid #ddd;
+  padding: 8px;
+}
+
+#account-table tr:nth-child(even) {
+  background-color: #f2f2f2;
+}
+
+#account-table th {
+  padding-top: 12px;
+  padding-bottom: 12px;
+  text-align: center;
+  background-color: #4caf50;
+  color: white;
+}
+
+#download {
+  background-color: lightcoral;
+}
+
+#download:hover {
+  background-color: darkred;
+}
+
+#deleteFirebase {
+  background-color: lightcoral;
+}
+
+#deleteFirebase:hover {
+  background-color: darkred;
+}
+
+#addUser {
+  background-color: lightcoral;
+}
+
+#addUser:hover {
+  background-color: darkred;
+}
+
+#back {
+  background-color: lightcoral;
+}
+
+#back:hover {
+  background-color: darkred;
+}

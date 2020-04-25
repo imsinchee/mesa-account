@@ -1,0 +1,222 @@
+<head>
+  <title>MESA Account Manager</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <script src="https://www.gstatic.com/firebasejs/7.6.2/firebase-app.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/7.6.2/firebase-database.js"></script>
+  <script src="script/script.js"></script>
+  <link rel="stylesheet" href="style/style.css" />
+</head>
+
+<body onload="run()">
+  <div align="center">
+    <div id="login">
+      <h1>MESA Account</h1>
+      <img src="img/logo.jfif" />
+      <table>
+        <tr>
+          <td>
+            <label>Username: </label>
+          </td>
+          <td>
+            <input
+              type="text"
+              placeholder="Enter your username"
+              id="getUserName"
+              class="input"
+            />
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <label>Year: </label>
+          </td>
+          <td>
+            <input
+              type="number"
+              placeholder="Enter Year"
+              id="getYear"
+              class="input"
+            />
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <label>Month: </label>
+          </td>
+          <td>
+            <select id="month" class="input">
+              <option value="">Select a Month</option>
+              <option value="01">Jan</option>
+              <option value="02">Feb</option>
+              <option value="03">Mar</option>
+              <option value="04">Apr</option>
+              <option value="05">May</option>
+              <option value="06">Jun</option>
+              <option value="07">Jul</option>
+              <option value="08">Aug</option>
+              <option value="09">Sep</option>
+              <option value="10">Oct</option>
+              <option value="11">Nov</option>
+              <option value="12">Dec</option>
+            </select>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <label>Password: </label>
+          </td>
+          <td>
+            <input
+              type="text"
+              placeholder="Enter Password"
+              id="password"
+              class="input"
+            />
+          </td>
+        </tr>
+      </table>
+      <br />
+      <button class="button" id="next">Select</button>
+      <button class="button" id="addUser">Add User</button>
+      <div id="contact">
+        <br />
+        <a href="mailto: imsinchee@gmail.com">Source Code</a>
+      </div>
+    </div>
+
+    <div id="account">
+      <h1 id="current-month">Table:</h1>
+      <table id="account-table">
+        <tr>
+          <th>Date</th>
+          <th>Description</th>
+          <th>Debit (RM)</th>
+          <th>Credit (RM)</th>
+        </tr>
+      </table>
+      <hr />
+      <button onclick="back()" class="button">Back</button>
+      <button class="button" id="download" onclick="fnExcelReport();">
+        Download
+      </button>
+      <div id="addAccount">
+        <h1>Add or Delete Account</h1>
+        <p>Add require all parameter, delete only description</p>
+        <table>
+          <tr>
+            <td>
+              <label>Date: </label>
+            </td>
+            <td>
+              <input type="date" id="dateWrite" class="input" />
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <label>Description: </label>
+            </td>
+            <td>
+              <input
+                type="text"
+                id="descriptionWrite"
+                class="input"
+                placeholder="Enter Description"
+              />
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <label>Amount: </label>
+            </td>
+            <td>
+              <input
+                type="number"
+                id="amountWrite"
+                class="input"
+                placeholder="Enter Amount"
+              />
+            </td>
+          </tr>
+        </table>
+
+        <br />
+        <button id="writeToFirebase" class="button">Submit</button>
+        <button id="deleteFirebase" class="button">Delete</button>
+      </div>
+    </div>
+
+    <div id="addNewUser">
+      <h1>Add User</h1>
+      <img src="img/logo.jfif" />
+      <table>
+        <tr>
+          <td>
+            <label>New Name: </label>
+          </td>
+          <td>
+            <input
+              type="text"
+              placeholder="Enter new user full name"
+              id="getNewName"
+              class="input"
+            />
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <label>New Username: </label>
+          </td>
+          <td>
+            <input
+              type="text"
+              placeholder="Enter new user username"
+              id="getNewUsername"
+              class="input"
+            />
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <label>New Password: </label>
+          </td>
+          <td>
+            <input
+              type="text"
+              placeholder="Enter new user password"
+              id="getNewPassword"
+              class="input"
+            />
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <label>Master Username: </label>
+          </td>
+          <td>
+            <input
+              type="text"
+              placeholder="Enter Master Username"
+              id="masterUsername"
+              class="input"
+            />
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <label>Password: </label>
+          </td>
+          <td>
+            <input
+              type="text"
+              placeholder="Enter Password"
+              id="masterPassword"
+              class="input"
+            />
+          </td>
+        </tr>
+      </table>
+      <button class="button" id="registerNewUser">Register</button>
+      <button class="button" id="back">Back</button>
+    </div>
+  </div>
+</body>
