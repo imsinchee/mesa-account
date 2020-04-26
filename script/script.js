@@ -194,9 +194,8 @@ function run() {
     var firstDEBIT = firstRow.insertCell(2);
     var firstCREDIT = firstRow.insertCell(3);
     var getBeginingBalance = db.ref(
-      "ACCOUNT/BEGINING-BALANCE/" + months[temMonth - 1]
+      "ACCOUNT/BEGINING-BALANCE/" + year + "/" + months[temMonth - 1]
     );
-    console.log("ACCOUNT/BEGINING-BALANCE/" + months[temMonth - 1]);
     getBeginingBalance.once("value", function (snapshot) {
       console.log(snapshot.val());
       firstDATE.innerHTML = year + "-" + month + "-01";
@@ -265,8 +264,12 @@ function run() {
         DEBIT.innerHTML = "";
         CREDIT.innerHTML = endingBalance;
       }
+      console.log(temMonth);
+      if (temMonth == 12) {
+        year = (parseFloat(year) + 1).toString();
+      }
       var beginingBalanceWrite = db.ref(
-        "ACCOUNT/BEGINING-BALANCE/" + months[temMonth%12]
+        "ACCOUNT/BEGINING-BALANCE/" + year + "/" + months[temMonth % 12]
       );
       beginingBalanceWrite.set(endingBalance);
     });
