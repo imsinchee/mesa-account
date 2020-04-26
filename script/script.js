@@ -180,7 +180,7 @@ function run() {
   function getDataFromFirebase() {
     var temMonth = month;
     var endingBalance = 0;
-    if (temMonth.includes("0")) {
+    if (temMonth[0] == "0") {
       temMonth = temMonth.substring(1);
     }
     var d = new Date(year, temMonth, 0);
